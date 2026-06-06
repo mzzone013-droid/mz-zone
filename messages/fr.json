@@ -1,0 +1,115 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "resources": "Ressources",
+    "consult": "Consultations",
+    "orders": "Mes Commandes",
+    "chatbot": "Assistant IA",
+    "logout": "Déconnexion"
+  },
+  "login": {
+    "title": "Bienvenue sur MZ-Zone",
+    "desc": "Plateforme intégrée pour les spécialités industrielles — instrumentation, électricité, automatisme, mécanique, hydraulique et sécurité",
+    "email": "Adresse e-mail",
+    "password": "Mot de passe",
+    "specialty": "Votre spécialité (optionnel)",
+    "enter": "Accéder à la plateforme",
+    "google": "Se connecter avec Google",
+    "or": "ou",
+    "tagline": "Industrial Knowledge Platform"
+  },
+  "home": {
+    "welcome": "Bienvenue sur MZ-Zone 👋",
+    "subtitle": "Choisissez une spécialité industrielle pour accéder aux équipements, matériaux et outils techniques",
+    "stats": {
+      "specialties": "Spécialités industrielles",
+      "subcategories": "Sous-catégories",
+      "products": "Produits disponibles",
+      "experts": "Experts disponibles",
+      "comprehensive": "Plateforme complète",
+      "specialized": "Contenu spécialisé",
+      "thisMonth": "Ce mois",
+      "new": "Nouveaux"
+    },
+    "sectionTitle": "Spécialités industrielles"
+  },
+  "specialties": {
+    "instrumentation": "Instrumentation & Mesure",
+    "electrical": "Électricité Industrielle",
+    "automation": "Automatisme & API",
+    "mechanics": "Mécanique",
+    "hydraulics": "Hydraulique & Pneumatique",
+    "hse": "Sécurité & Maintenance Générale",
+    "selectSubcat": "Choisir une sous-catégorie"
+  },
+  "products": {
+    "search": "Rechercher par nom ou référence...",
+    "all": "Tous",
+    "available": "Disponible",
+    "urgent": "Livraison rapide",
+    "discount": "Offres",
+    "inStock": "En stock",
+    "outOfStock": "Actuellement indisponible",
+    "orderNow": "Commander",
+    "noProducts": "Aucun produit correspondant",
+    "supplier": "Fournisseur"
+  },
+  "order": {
+    "confirm": "Confirmer la commande",
+    "quantity": "Quantité souhaitée",
+    "note": "Note au fournisseur (optionnel)",
+    "notePlaceholder": "Ajouter des détails ou exigences spéciales...",
+    "total": "Total",
+    "submit": "Confirmer et envoyer au fournisseur",
+    "success": "Commande envoyée avec succès ! Le fournisseur vous contactera dans l'heure."
+  },
+  "resources": {
+    "title": "Ressources techniques",
+    "subtitle": "Documents techniques, manuels d'exploitation et certificats produits",
+    "dataSheets": "Fiches techniques produits",
+    "dataSheetsDesc": "Plus de 2 400 fiches techniques des principales marques",
+    "manuals": "Manuels de maintenance",
+    "manualsDesc": "Procédures de maintenance préventive et corrective",
+    "videos": "Tutoriels vidéo",
+    "videosDesc": "Explications techniques détaillées pour toutes les spécialités"
+  },
+  "consult": {
+    "title": "Consultations techniques",
+    "subtitle": "Contactez des experts certifiés en maintenance industrielle — consultations gratuites et payantes",
+    "free": "Gratuit",
+    "freeTitle": "Consultations gratuites",
+    "paid": "Payant",
+    "paidTitle": "Consultations spécialisées",
+    "available": "Disponible",
+    "busy": "Occupé",
+    "contact": "Contacter",
+    "book": "Réserver",
+    "schedule": "Planifier",
+    "appointment": "Rendez-vous",
+    "free_label": "Gratuit"
+  },
+  "orders": {
+    "title": "Mes commandes",
+    "subtitle": "Suivi de toutes les commandes de pièces et équipements",
+    "shipping": "En cours de livraison",
+    "processing": "En traitement",
+    "delivered": "Livré",
+    "quantity": "Quantité",
+    "supplier": "Fournisseur"
+  },
+  "chatbot": {
+    "title": "Assistant IA MZ",
+    "subtitle": "Assistant technique spécialisé en industrie — posez-moi vos questions",
+    "placeholder": "Posez une question sur un équipement industriel, un problème technique...",
+    "send": "Envoyer",
+    "thinking": "Réflexion...",
+    "welcome": "Bonjour ! Je suis l'assistant technique MZ-Zone. Je peux vous aider avec des questions techniques liées à l'instrumentation, l'électricité, l'automatisme, la mécanique, l'hydraulique et la sécurité industrielle."
+  },
+  "common": {
+    "back": "Retour",
+    "backToHome": "Retour à l'accueil",
+    "backToSpecialty": "Retour à la spécialité",
+    "loading": "Chargement...",
+    "error": "Une erreur s'est produite"
+  }
+}

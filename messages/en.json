@@ -1,0 +1,115 @@
+{
+  "nav": {
+    "home": "Home",
+    "resources": "Resources",
+    "consult": "Consulting",
+    "orders": "My Orders",
+    "chatbot": "AI Assistant",
+    "logout": "Logout"
+  },
+  "login": {
+    "title": "Welcome to MZ-Zone",
+    "desc": "Integrated platform for industrial specialties — instrumentation, electricity, automation, mechanics, hydraulics and safety",
+    "email": "Email Address",
+    "password": "Password",
+    "specialty": "Your Specialty (optional)",
+    "enter": "Enter Platform",
+    "google": "Sign in with Google",
+    "or": "or",
+    "tagline": "Industrial Knowledge Platform"
+  },
+  "home": {
+    "welcome": "Welcome to MZ-Zone 👋",
+    "subtitle": "Choose an industrial specialty to access equipment, materials and technical tools",
+    "stats": {
+      "specialties": "Industrial Specialties",
+      "subcategories": "Subcategories",
+      "products": "Products Available",
+      "experts": "Experts Available",
+      "comprehensive": "Comprehensive Platform",
+      "specialized": "Specialized Content",
+      "thisMonth": "This Month",
+      "new": "New"
+    },
+    "sectionTitle": "Industrial Specialties"
+  },
+  "specialties": {
+    "instrumentation": "Instrumentation & Measurement",
+    "electrical": "Industrial Electricity",
+    "automation": "Automation & PLC",
+    "mechanics": "Mechanics",
+    "hydraulics": "Hydraulics & Pneumatics",
+    "hse": "Safety & General Maintenance",
+    "selectSubcat": "Choose a subcategory"
+  },
+  "products": {
+    "search": "Search by name or reference number...",
+    "all": "All",
+    "available": "Available",
+    "urgent": "Fast Delivery",
+    "discount": "Offers",
+    "inStock": "In Stock",
+    "outOfStock": "Currently Unavailable",
+    "orderNow": "Order Now",
+    "noProducts": "No matching products",
+    "supplier": "Supplier"
+  },
+  "order": {
+    "confirm": "Confirm Order",
+    "quantity": "Quantity",
+    "note": "Note to supplier (optional)",
+    "notePlaceholder": "Add details or special requirements...",
+    "total": "Total",
+    "submit": "Confirm & Send Order to Supplier",
+    "success": "Order sent successfully! The supplier will contact you within an hour."
+  },
+  "resources": {
+    "title": "Technical Resources",
+    "subtitle": "Technical documents, operation manuals, and product certificates",
+    "dataSheets": "Product Data Sheets",
+    "dataSheetsDesc": "Over 2,400 technical data sheets from leading brands",
+    "manuals": "Maintenance Manuals",
+    "manualsDesc": "Preventive and corrective maintenance procedures",
+    "videos": "Video Tutorials",
+    "videosDesc": "Detailed technical explanations for all specialties"
+  },
+  "consult": {
+    "title": "Technical Consulting",
+    "subtitle": "Connect with certified industrial maintenance experts — free and paid consultations",
+    "free": "Free",
+    "freeTitle": "Free Consultations",
+    "paid": "Paid",
+    "paidTitle": "Specialized Consultations",
+    "available": "Available",
+    "busy": "Busy",
+    "contact": "Contact",
+    "book": "Book",
+    "schedule": "Schedule",
+    "appointment": "Appointment",
+    "free_label": "Free"
+  },
+  "orders": {
+    "title": "My Orders",
+    "subtitle": "Track all parts and equipment orders",
+    "shipping": "Shipping",
+    "processing": "Processing",
+    "delivered": "Delivered",
+    "quantity": "Quantity",
+    "supplier": "Supplier"
+  },
+  "chatbot": {
+    "title": "MZ AI Assistant",
+    "subtitle": "Technical assistant specialized in industry — ask me about any equipment or technical issue",
+    "placeholder": "Ask about any industrial equipment, technical problem, or recommendation...",
+    "send": "Send",
+    "thinking": "Thinking...",
+    "welcome": "Hello! I'm the MZ-Zone technical assistant. I can help you with technical questions related to instrumentation, electricity, automation, mechanics, hydraulics and industrial safety."
+  },
+  "common": {
+    "back": "Back",
+    "backToHome": "Back to Home",
+    "backToSpecialty": "Back to Specialty",
+    "loading": "Loading...",
+    "error": "An error occurred"
+  }
+}
