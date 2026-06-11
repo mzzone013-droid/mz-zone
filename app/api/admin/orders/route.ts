@@ -12,12 +12,16 @@ async function checkAdmin() {
   return user
 }
 
-export async function POST(req: Request) {
+export async function DELETE(req: Request) {
   const user = await checkAdmin()
   if (!user) return NextResponse.json({ error: 'Forbidden' }, { status: 403 })
 
-  const { userId, role } = await req.json()
-  const { error } = await supabaseAdmin.from('profiles').update({ role }).eq('id', userId)
+  const { orderIds } = await req.json()
+  if (!Array.isArray(orderIds) || orderIds.length === 0) {
+    return NextResponse.json({ error: 'No order IDs provided' }, { status: 400 })
+  }
+
+  const { error } = await supabaseAdmin.from('orders').delete().in('id', orderIds)
   if (error) return NextResponse.json({ error: error.message }, { status: 500 })
   return NextResponse.json({ success: true })
 }

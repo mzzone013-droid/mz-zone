@@ -81,7 +81,7 @@ export async function middleware(request: NextRequest) {
       return NextResponse.json({ error: 'Banned' }, { status: 403 })
     }
 
-    if (pathnameWithoutLocale.startsWith('/admin') && role !== 'admin' && user.email !== 'mzzone684@gmail.com') {
+    if (pathnameWithoutLocale.startsWith('/admin') && role !== 'admin') {
       return NextResponse.redirect(new URL(`/${locale}/dashboard`, request.url))
     }
 
