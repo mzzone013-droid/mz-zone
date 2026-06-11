@@ -48,17 +48,17 @@ export default function ProfilePage() {
     setSaving(true);
     const { error } = await supabase
       .from('profiles')
-      .upsert({
-        id: userId,
+      .update({
         full_name: profile.full_name,
         phone: profile.phone,
         address: profile.address,
         avatar_url: profile.avatar_url,
-      });
+      })
+      .eq('id', userId);
 
     if (error) {
       console.error('Save error:', error);
-      alert(isRTL ? 'حدث خطأ: تأكد من تشغيل كود SQL وإضافة الأعمدة.' : 'Error: Make sure to run the SQL code to add columns.');
+      alert(error.message);
     } else {
       alert(isRTL ? 'تم حفظ التعديلات بنجاح!' : 'Profile saved successfully!');
       router.refresh();
