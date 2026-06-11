@@ -130,7 +130,9 @@ DROP POLICY IF EXISTS "products_update_vendor"   ON public.vendor_products;
 DROP POLICY IF EXISTS "products_delete_vendor"   ON public.vendor_products;
 
 DROP POLICY IF EXISTS "orders_select_own"        ON public.orders;
+DROP POLICY IF EXISTS "orders_select_vendor"     ON public.orders;
 DROP POLICY IF EXISTS "orders_insert_own"        ON public.orders;
+DROP POLICY IF EXISTS "orders_update_vendor"     ON public.orders;
 
 -- PROFILES
 CREATE POLICY "profiles_select"     ON public.profiles FOR SELECT USING (true);
@@ -164,11 +166,21 @@ CREATE POLICY "products_delete_vendor" ON public.vendor_products FOR DELETE USIN
 );
 
 -- ORDERS
+-- Buyers see their own orders; admins see all
 CREATE POLICY "orders_select_own" ON public.orders FOR SELECT USING (
   auth.uid()::text = user_id OR
   EXISTS (SELECT 1 FROM public.profiles p WHERE p.id = auth.uid()::text AND p.role = 'admin')
 );
+-- Vendors see orders placed for their products
+CREATE POLICY "orders_select_vendor" ON public.orders FOR SELECT USING (
+  auth.uid()::text = vendor_id
+);
 CREATE POLICY "orders_insert_own" ON public.orders FOR INSERT WITH CHECK (auth.uid()::text = user_id);
+-- Vendors can update order status (accept, ship, reject)
+CREATE POLICY "orders_update_vendor" ON public.orders FOR UPDATE USING (
+  auth.uid()::text = vendor_id OR
+  EXISTS (SELECT 1 FROM public.profiles p WHERE p.id = auth.uid()::text AND p.role = 'admin')
+);
 
 -- ============================================================
 -- 7. STORAGE BUCKETS

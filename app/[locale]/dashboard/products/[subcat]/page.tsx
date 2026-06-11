@@ -83,18 +83,21 @@ export default function ProductSubcatPage({ params: paramsPromise }: { params: P
       .insert({
         user_id: user.id,
         product_id: selectedProduct.id,
-        vendor_id: selectedProduct.user_id, // التصحيح هنا: استخدام user_id من جدول المنتجات
+        vendor_id: selectedProduct.user_id,
+        product_name: selectedProduct.name,
+        product_ref: selectedProduct.reference || null,
+        product_emoji: selectedProduct.emoji || null,
         quantity: qty,
         total_price: totalPrice,
         status: 'pending',
         city: shippingInfo.city,
         shipping_address: shippingInfo.address,
-        phone_number: shippingInfo.phone
+        phone_number: shippingInfo.phone,
       });
 
     if (error) {
       console.error(error);
-      alert(isRTL ? 'حدث خطأ أثناء إتمام الطلب' : 'Error placing order');
+      alert(error.message);
     } else {
       alert(isRTL ? 'تم تقديم طلبك بنجاح! سيتم التواصل معك قريباً.' : 'Order placed successfully!');
       setShowCheckout(false);
