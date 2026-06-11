@@ -10,10 +10,10 @@ type Order = {
   status: string;
   created_at: string;
   user_id: string;
-  profiles: {
+  buyer: {
     full_name: string;
     email: string;
-  };
+  } | null;
   product: {
     name: string;
     reference: string;
@@ -36,13 +36,13 @@ export default function VendorOrdersPage({ params: paramsPromise }: { params: Pr
       .from('orders')
       .select(`
         *,
-        profiles:user_id (full_name, email),
-        product:vendor_products (name, reference)
+        buyer:profiles!orders_user_id_fkey(full_name, email),
+        product:vendor_products!orders_product_id_fkey(name, reference)
       `)
       .eq('vendor_id', user.id)
       .order('created_at', { ascending: false });
 
-    if (error) console.error(error);
+    if (error) console.error('Vendor orders error:', error.message, error.details);
     if (data) setOrders(data as any);
     setLoading(false);
   };
@@ -92,8 +92,8 @@ export default function VendorOrdersPage({ params: paramsPromise }: { params: Pr
             ) : orders.map(order => (
               <tr key={order.id} style={{ borderBottom: '1px solid rgba(255,255,255,0.03)' }}>
                 <td style={{ padding: '20px 24px' }}>
-                  <div style={{ color: 'white', fontWeight: 700, fontSize: '14px' }}>{order.profiles?.full_name}</div>
-                  <div style={{ color: '#64748B', fontSize: '11px' }}>{order.profiles?.email}</div>
+                  <div style={{ color: 'white', fontWeight: 700, fontSize: '14px' }}>{order.buyer?.full_name || '—'}</div>
+                  <div style={{ color: '#64748B', fontSize: '11px' }}>{order.buyer?.email || ''}</div>
                 </td>
                 <td style={{ padding: '20px 24px' }}>
                   <div style={{ color: 'white', fontSize: '14px' }}>{order.product?.name}</div>

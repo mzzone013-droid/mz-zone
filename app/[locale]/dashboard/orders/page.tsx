@@ -46,8 +46,8 @@ export default function SmartOrdersPage() {
 
     let query = supabase.from('orders').select(`
       *,
-      profiles:user_id (full_name, email),
-      product:vendor_products (name, image_url, emoji, reference)
+      buyer:profiles!orders_user_id_fkey(full_name, email),
+      product:vendor_products!orders_product_id_fkey(name, image_url, emoji, reference)
     `);
 
     if (profile?.role === 'vendor') {
@@ -134,7 +134,7 @@ export default function SmartOrdersPage() {
                  <div style={{ flex: 1, textAlign: isRTL ? 'right' : 'left' }}>
                     <div style={{ fontSize: '11px', color: '#64748B', marginBottom: '4px' }}>📞 {isRTL ? 'رقم الهاتف' : 'Phone'}</div>
                     <div style={{ color: '#F1F5F9', fontSize: '13px', fontWeight: 600 }}>{order.phone_number}</div>
-                    {userRole === 'vendor' && <div style={{ fontSize: '11px', color: '#F97316' }}>{isRTL ? `الزبون: ${order.profiles?.full_name}` : `Customer: ${order.profiles?.full_name}`}</div>}
+                    {userRole === 'vendor' && <div style={{ fontSize: '11px', color: '#F97316' }}>{isRTL ? `الزبون: ${order.buyer?.full_name}` : `Customer: ${order.buyer?.full_name}`}</div>}
                  </div>
               </div>
             )}

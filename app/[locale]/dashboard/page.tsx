@@ -58,9 +58,16 @@ export default function DashboardHome() {
 
     setBuying(true);
     const { data: { user } } = await supabase.auth.getUser();
-    
+
     if (!user) {
       alert(isRTL ? 'يجب تسجيل الدخول أولاً' : 'Please login first');
+      setBuying(false);
+      return;
+    }
+
+    const productName = selectedProduct?.name;
+    if (!productName) {
+      alert('product_name is missing — product data: ' + JSON.stringify(selectedProduct));
       setBuying(false);
       return;
     }
@@ -71,7 +78,7 @@ export default function DashboardHome() {
         user_id: user.id,
         product_id: selectedProduct.id,
         vendor_id: selectedProduct.user_id,
-        product_name: selectedProduct.name,
+        product_name: productName,
         product_ref: selectedProduct.reference || null,
         product_emoji: selectedProduct.emoji || null,
         supplier: selectedProduct.vendor?.full_name || null,
