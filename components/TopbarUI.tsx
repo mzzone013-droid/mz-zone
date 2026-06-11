@@ -102,7 +102,7 @@ export default function TopbarUI({ user, role, avatarUrl, locale, isRTL }: { use
       </div>
 
       {/* Desktop Navigation (Center) */}
-      <nav className="desktop-nav" style={{ display: 'flex', gap: '12px' }}>
+      <nav className="desktop-nav" style={{ display: 'flex', gap: '12px', alignItems: 'center' }}>
         {navLabels.map((label, i) => (
           <Link key={label} href={navLinks[i]} style={{ textDecoration: 'none' }}>
             <button style={{
@@ -114,6 +114,20 @@ export default function TopbarUI({ user, role, avatarUrl, locale, isRTL }: { use
             </button>
           </Link>
         ))}
+        {role === 'admin' && (
+          <Link href={`/${locale}/admin`} style={{ textDecoration: 'none' }}>
+            <button style={{
+              padding: '10px 20px', border: '1px solid rgba(249,115,22,0.35)',
+              background: 'rgba(249,115,22,0.1)', color: '#F97316',
+              fontSize: '16px', cursor: 'pointer', borderRadius: '12px',
+              fontWeight: 700, transition: 'all 0.2s'
+            }}
+            onMouseEnter={e => { e.currentTarget.style.background = 'rgba(249,115,22,0.2)'; e.currentTarget.style.borderColor = '#F97316'; }}
+            onMouseLeave={e => { e.currentTarget.style.background = 'rgba(249,115,22,0.1)'; e.currentTarget.style.borderColor = 'rgba(249,115,22,0.35)'; }}>
+              {isRTL ? 'لوحة الإدارة' : 'Admin Panel'}
+            </button>
+          </Link>
+        )}
       </nav>
 
       {/* Logo (Right) */}
@@ -146,6 +160,16 @@ export default function TopbarUI({ user, role, avatarUrl, locale, isRTL }: { use
                {label}
              </Link>
            ))}
+           {role === 'admin' && (
+             <Link href={`/${locale}/admin`} onClick={() => setIsMenuOpen(false)} style={{
+               textDecoration: 'none', color: '#F97316', fontSize: '20px', fontWeight: 700,
+               padding: '15px 0', borderBottom: '1px solid rgba(249,115,22,0.2)',
+               display: 'flex', alignItems: 'center', gap: '10px'
+             }}>
+               <span>⚙️</span>
+               {isRTL ? 'لوحة الإدارة' : 'Admin Panel'}
+             </Link>
+           )}
            <div style={{ marginTop: 'auto', display: 'flex', gap: '20px', paddingBottom: '40px' }}>
              {['AR', 'FR', 'EN'].map(l => (
                <Link key={l} href={`/${l.toLowerCase()}/dashboard`} style={{ color: '#F97316', fontSize: '18px', fontWeight: 800, textDecoration: 'none' }}>{l}</Link>
