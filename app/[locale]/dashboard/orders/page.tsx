@@ -12,7 +12,7 @@ type Order = {
   city: string;
   shipping_address: string;
   phone_number: string;
-  profiles?: { full_name: string; email: string };
+  buyer?: { full_name: string; email: string } | null;
   product: {
     name: string;
     image_url?: string | null;
