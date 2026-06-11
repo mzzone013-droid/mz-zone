@@ -16,7 +16,7 @@ export async function POST(req: Request) {
   const user = await checkAdmin()
   if (!user) return NextResponse.json({ error: 'Forbidden' }, { status: 403 })
 
-  const { name, description, price, specialty, reference, image_url, vendor_user_id } = await req.json()
+  const { name, description, price, specialty, subcat_id, subcat_name, reference, image_url, vendor_user_id } = await req.json()
 
   if (!name) return NextResponse.json({ error: 'Product name is required' }, { status: 400 })
 
@@ -27,6 +27,8 @@ export async function POST(req: Request) {
       description: description || null,
       price: Number(price) || 0,
       specialty: specialty || null,
+      subcat_id: subcat_id || null,
+      subcat_name: subcat_name || null,
       reference: reference || null,
       image_url: image_url || null,
       user_id: vendor_user_id || user.id,

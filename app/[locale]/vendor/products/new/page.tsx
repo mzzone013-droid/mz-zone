@@ -24,14 +24,10 @@ export default function NewProductPage() {
     image_url: '',
   })
 
-  const specialtyOptions = [
-    { value: 'instrumentation', label: '🎛️ الأدواتية والقياس' },
-    { value: 'electrical',      label: '⚡ الكهرباء الصناعية' },
-    { value: 'automation',      label: '🤖 الأتمتة والتحكم' },
-    { value: 'mechanics',       label: '⚙️ الميكانيك' },
-    { value: 'hydraulics',      label: '💧 الهيدروليك والبنوماتيك' },
-    { value: 'hse',             label: '🦺 السلامة والصيانة' },
-  ]
+  const specialtyOptions = (Object.entries(SPECIALTIES) as any[]).map(([key, spec]) => ({
+    value: key,
+    label: `${spec.icon} ${spec.title_ar}`,
+  }))
 
   // Dynamic subcats based on chosen specialty
   const subcats = form.specialty
