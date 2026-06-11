@@ -5,7 +5,6 @@ const resources = [
   { id: 'datasheets', icon: '📄', title_ar: 'Data Sheets المنتجات', title_en: 'Product Data Sheets', desc_ar: 'أكثر من 2,400 ورقة بيانات فنية من أبرز العلامات العالمية (Siemens, Schneider, ABB...)', color: '#06B6D4' },
   { id: 'manuals', icon: '📋', title_ar: 'أدلة الصيانة والتشغيل', title_en: 'Maintenance Manuals', desc_ar: 'إجراءات الصيانة الوقائية والتصحيحية للأجهزة الصناعية مترجمة ومعتمدة.', color: '#F59E0B' },
   { id: 'tutorials', icon: '🎥', title_ar: 'دروس فنية مرئية', title_en: 'Video Tutorials', desc_ar: 'شروحات عملية بالفيديو لتركيب وبرمجة الحساسات والمحركات و PLC.', color: '#8B5CF6' },
-  { id: 'certificates', icon: '🎓', title_ar: 'شهادات المطابقة', title_en: 'Certificates of Conformity', desc_ar: 'الوصول إلى شهادات ATEX و ISO الخاصة بالمعدات الصناعية الحساسة.', color: '#10B981' },
 ];
 
 export default function ResourcesPage() {
